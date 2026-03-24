@@ -23,5 +23,6 @@ namespace APBD_TASK2.Database
 
         public List<Equipment> Equipments { get; } = new();
         public List<User> Users { get; } = new();
+        public List<Rental> Rentals { get; } = new();
     }
 }

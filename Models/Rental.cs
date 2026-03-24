@@ -2,6 +2,9 @@ namespace APBD_TASK2.Models;
 
 public class Rental
 {
+    private static int _idCounter = 1;
+
+    public int Id { get; set; }
     public User User { get; set; }
     public Equipment Equipment { get; set; }
     public DateTime From { get; set; }
@@ -11,10 +14,12 @@ public class Rental
 
     public Rental(User user, Equipment equipment, DateTime from, DateTime dueTo)
     {
+        Id = _idCounter++;
         User = user;
         Equipment = equipment;
         From = from;
         DueTo = dueTo;
+        Returned = null;
         Penalty = 0;
     }
 }

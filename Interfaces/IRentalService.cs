@@ -2,16 +2,11 @@ using APBD_TASK2.Models;
 
 namespace APBD_TASK2.Interfaces;
 
-internal interface IRentalService
+public interface IRentalService
 {
-    void AddUser(User user);
-    void AddEquipment(Equipment equipment);
-
-    List<Equipment> GetAllEquipment();
-    List<Equipment> GetAllAvaliableEquipment();
-
     Rental RentEquipment(int userId, int equipmentId, int days);
-
+    void ReturnEquipment(int rentalId);
+    List<Rental> GetActiveRentalsForUser(int userId);
+    List<Rental> GetOverdueRentals();
     string GenerateReport();
-
-} 
+}
